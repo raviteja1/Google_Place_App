@@ -3,8 +3,10 @@
     display: 'flex' !important;
     margin: 'auto' !important;
     width: '50%' !important;
-    margin: 10%;
+    margin: 6%;
+    margin-left: 22%;
     flex-direction: column !important;
+    box-sizing: border-box;
 }
 
 .text-field-styles {
@@ -12,22 +14,22 @@
 }
 
 .label-styles {
-    margin-right: 89%;
+    margin-right: 37%;
     font-size: 20px;
     margin-bottom: 2%;
     font-style: italic;
+    margin-left: 23%;
 }
 
 .error-msg-styles {
-    margin-right: 19%;
+    margin-left: 44% !important;
     font-weight: 700;
 }
 
 table {
     margin-bottom: 4%;
-    margin-left: 31%;
+    margin-left: 41%;
     text-align-last: center;
-    ;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 16%;
@@ -42,4 +44,8 @@ th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+.helpText:hover {
+    color: blue;
 }

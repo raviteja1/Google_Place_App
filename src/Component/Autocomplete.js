@@ -10,8 +10,8 @@ class Autocomplete extends Component {
   };
 
   handleChange = event => {
-    this.setState({ input: event.target.value });
-    this.props.fetchAutocompleteResults(event.target.value);
+    this.setState({ input: event?.target?.value });
+    this.props.fetchAutocompleteResults(event?.target?.value);
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -26,8 +26,17 @@ class Autocomplete extends Component {
     return (
       <div>
         <div className='auto-complete-section' style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
-          <label className='label-styles'>Map Location</label>
-          <TextField id="exampleInput" label="Enter Location" className='text-field-styles' variant="outlined" onChange={this.handleChange} />
+          <label className='label-styles'>Find Location By Typing Place Name</label>
+          <TextField id="exampleInput"
+            label="Enter Location"
+            className='text-field-styles'
+            variant="outlined"
+            onChange={this.handleChange} />
+
+          <span className='helpText'
+            style={{ marginTop: '10px' }}
+            title="This input search bar can only find 5 locations(India,Malaysia,Paris,USA,UK) due to static response">
+            Hover Me For Help</span>
         </div>
 
         {loading && <p>Loading...</p>}
@@ -42,7 +51,7 @@ class Autocomplete extends Component {
               </tr>
             ))}
           </table>
-        ) : <span className='error-msg-styles'>No Location Found</span>}
+        ) : <div className='error-msg-styles'>No Location Found</div>}
       </div>
     );
   }
@@ -50,9 +59,9 @@ class Autocomplete extends Component {
 
 const mapStateToProps = state => {
   return {
-    autocompleteResults: state.autocompleteResults,
-    loading: state.loading,
-    error: state.error
+    autocompleteResults: state?.autocompleteResults,
+    loading: state?.loading,
+    error: state?.error
   };
 };
 
