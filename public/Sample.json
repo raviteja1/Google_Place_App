@@ -78,7 +78,7 @@
           "types": ["neighborhood", "political", "geocode"]
         },
         {
-          "description": "Paris, KY, USA",
+          "description": "UK",
           "matched_substrings": [{ "length": 5, "offset": 0 }],
           "place_id": "ChIJsU7_xMfKQ4gReI89RJn0-RQ",
           "reference": "ChIJsU7_xMfKQ4gReI89RJn0-RQ",
