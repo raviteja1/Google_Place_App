@@ -22,23 +22,24 @@ const fetchAutocompleteResultsFailure = error => {
   };
 };
 
+//Action creator with Redux Thunk
 export const fetchAutocompleteResults = input => {
-  return dispatch => {
+  return (dispatch,getState) => {
     axios
       .get(`Sample.json`)
       .then(response => {
-        let filteredArray = response?.data?.predictions.filter(obj=>{
+        let refinedCountries = response?.data?.predictions.filter(obj=>{
           return obj?.description?.toLowerCase() == input?.toLowerCase();
     })
-        if(filteredArray?.length > 0){
-          dispatch(fetchAutocompleteResultsSuccess(filteredArray));
+        if(refinedCountries?.length > 0){
+          dispatch(fetchAutocompleteResultsSuccess(refinedCountries));
         }
         else{
           dispatch(fetchAutocompleteResultsSuccess([]));
         }
       })
       .catch(error => {
-        dispatch(fetchAutocompleteResultsFailure(error.message));
+        dispatch(fetchAutocompleteResultsFailure(error?.message));
       });
   };
 };
